@@ -1,3 +1,9 @@
+import { Sort } from '@/components/SortList'
+
 export default function Page() {
-  return <h1>Container</h1>
+  return (
+    <div className="container flex py-6">
+      <Sort />
+    </div>
+  )
 }
