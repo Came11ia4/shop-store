@@ -8,7 +8,7 @@ export const Footer = async () => {
         <h2 className="text-2xl">
           <Link href="/">{Title}</Link>
         </h2>
-        <div className="grid-cols-3 gap-18 flex">
+        <div className="flex gap-10">
           {NavList.map((n, i) => {
             return (
               <>
