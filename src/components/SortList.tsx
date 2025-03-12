@@ -2,11 +2,11 @@
 import { SortTitle, SortList } from "@/lib/constants"
 import { ToggleGroup, ToggleGroupItem } from "./ui/toggle-group"
 import { SortItem } from "@/type/global"
-
+import { useSort } from "@/store"
 export const Sort = () => {
-
+  const { setValue } = useSort()
   const sortChangeEvent = (sort: SortItem) => {
-    console.log("sort:", sort);
+    setValue(sort);
   }
   return (
     <div className="w-64 py-4">

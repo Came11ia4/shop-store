@@ -1,4 +1,5 @@
 export const Title = 'Shopping Store'
+export const ProductTitle = 'All Product'
 export const MenuList = [
   {
     href: '/search',

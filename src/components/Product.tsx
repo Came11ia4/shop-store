@@ -1,16 +1,23 @@
 'use client'
 import { IProduct } from '@/type/global'
+import { ProductTitle } from '@/lib/constants'
 import Image from 'next/image'
-
+import { useSort } from '@/store'
 interface IProps {
-  data: IProduct[]
+  data: IProduct[];
 }
 
 export const Product = ({ data }: IProps) => {
   const products = [...data];
+  const { value } = useSort();
+
+  if(value !== 'latest') {
+    value === 'low' ? products.sort((a, b) => a.price - b.price) : products.sort((a, b) => b.price - a.price);
+  }
+
   return (
     <div className="flex-1">
-      <h2 className="mb-8 text-4xl">All Products</h2>
+      <h2 className="mb-8 text-4xl">{ ProductTitle }</h2>
       <div className="grid grid-cols-3 gap-4">
         {products.map((pro) => (
           <div key={pro.id} className="bg-slate-50 p-4 rounded-lg shadow-md hover:bg-slate-200 transition duration-300 ease-in-out cursor-pointer">

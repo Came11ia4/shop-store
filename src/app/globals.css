@@ -46,8 +46,8 @@
 }
 
 @layer components {
-  .container {
-    @apply w-[1140px] mx-auto;
+  .wrapper {
+    @apply mx-auto w-[1140PX];
   }
 }
 
